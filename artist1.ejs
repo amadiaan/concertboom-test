@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ConcertBoom APP</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css">
+    <style type="text/css">
+
+        td {
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        body{
+
+              	margin: 0;
+        }
+	
+
+	.topbar1 {
+		  width: 100%;
+	          height: 35px;
+		  background-color: #9AD1EC;
+		  background: linear-gradient(to right,
+                        rgb(200,   200,   220) 0%, 
+                        rgb(10,   60,   170) 100%
+                  );
+		  overflow: auto;
+	}
+	.topbar2 {
+                 width: 100%;
+                 height: 220px;
+
+                 background-color: #4C82C8;
+
+                 background: linear-gradient(to right,
+                       rgb(190,   190,   220) 0%,
+
+                       rgb(20,   80,   200) 100%
+                 );
+       }
+
+	.avatar { 
+		width: 200px;
+ 		height: 200px;
+	}
+
+	.topbar_container {
+
+               width: 100%;
+               height: 200px;
+               margin: auto;
+               padding: 10px;
+
+       }
+
+	.p_img {
+                margin-left: 17%;
+                height: 170px;
+                float: left;
+       }
+       	.p_info {
+
+               height: 150px;
+               margin: auto;
+               width: 390px;
+               padding: 10px;
+       }
+
+	.ui.icon.input {
+		padding: 2px;
+		left: 830px;
+		height: 29px;
+		margin: 2px;
+	}
+
+	p
+	{
+		margin: 2px;
+		padding: 4px;
+	}	
+	.p_info_name {
+		color: white;
+		font-family: verdana;
+		font-size: 300%;
+    		text-transform: capitalize;
+	}
+	.p_info_date {
+                color: white;
+                font-family: verdana;
+                font-size: 150%;
+                text-transform: capitalize;
+        }
+	.p_info_desc {
+                color: white;
+                font-family: verdana;
+                font-size: 70%;
+                text-transform: capitalize;
+        }
+	
+	.container {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      }
+
+      h2 {
+      font-size: 26px;
+      margin: 20px 0;
+      text-align: center;
+
+      }
+      .sml{
+        font-size: 0.5em;
+      }
+
+      li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .table-row {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+      }
+      .col-1 {
+        flex-basis: 20%;
+      }
+      .col-2 {
+        flex-basis: 26%;
+      }
+      .col-3 {
+        flex-basis: 25%;
+      }
+
+      @media all and (max-width: 400px) {
+        .table-row{
+
+        }
+        li {
+          display: block;
+        }
+        .col {
+
+          flex-basis: 100%;
+
+        }
+        .col {
+          display: flex;
+          padding: 10px 0;
+          &:before {
+            color: #6C7A89;
+            padding-right: 10px;
+            content: attr(data-label);
+            flex-basis: 50%;
+            text-align: right;
+          }
+        }
+
+      
+
+      .wrapper {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 300px 300px 300px;
+            background-color: #fff;
+            color: #444;
+            margin-top: 300px;
+            margin-left: 100px;
+        }
+
+        .box {
+            background-color: #D3D3D3;
+            color: black;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 150%;
+
+        }
+
+        .a {
+            grid-column: 1 / span 2;
+            height: 600px;
+        }
+        .b {
+            grid-column: 3 ;
+            grid-row: 1 / span 2;
+            height: 400px;
+        }
+        .c {
+            grid-column: 1 / span 2;
+            grid-row: 2 ;
+            height: 600px;
+        }
+	
+    	
+     </style>
+  </head>
+  <body>
+	<script>var im_url = "<%= img_url %>";</script>
+	<div class="topbar1">
+		<div class="ui category search">
+		  <div class="ui icon input">
+		    <input class="prompt" type="text" placeholder="Search ...">
+		    <i class="search icon"></i>
+		  </div>
+		  <div class="results"></div>
+		</div>
+	</div>
+	<div class="topbar2">
+		<section class="topbar_container">
+		<div class="p_img">
+                        <script>
+                        	document.write('<img class=avatar style="border-radius: 50%" src="' + im_url + '">');
+                	</script>
+                </div>
+		
+		<div class="p_info"> 
+			<p class="p_info_name"> <%= p_name %> </p>
+			<p class="p_info_date">2018 TOUR DATES & TICKETS</p>
+			<p class="p_info_desc"> <%= description %> </p>
+		</div> 
+		</section>
+	</div>
+	
+	
+		  <div class="wrapper">
+      <div class="box a">
+
+
+
+        <div class="container">
+        <h2>EVENT NEAR  <small class="sml">  San Francisco</small></h2>
+        <ul class="responsive-table">
+          <li class="table-row">
+            <div class="col col-1" data-label="event date">
+              <small style="line-height:20%">Tue</small>
+              <small style="line-height:20%">Mar. 10, 2018</small>
+              <small style="line-height:10%">8:30 pm</small>
+            </div>
+            <div class="col col-2" data-label="Performer Name"><%= p_name %></div>
+            <div class="col col-3" data-label="Amount"> <button class="ui primary basic button">Tickets</button> </div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="event date">
+              <small style="line-height:20%">Tue</small>
+              <small style="line-height:20%">Mar. 11, 2018</small>
+              <small style="line-height:10%">8:30 pm</small>
+            </div>
+            <div class="col col-2" data-label="Performer Name"><%= p_name %></div>
+            <div class="col col-3" data-label="Amount"> <button class="ui primary basic button">Tickets</button> </div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="event date">
+              <small style="line-height:20%">Tue</small>
+              <small style="line-height:20%">Mar. 12, 2018</small>
+              <small style="line-height:10%">8:30 pm</small>
+            </div>
+            <div class="col col-2" data-label="Performer Name"><%= p_name %></div>
+            <div class="col col-3" data-label="Amount"> <button class="ui primary basic button">Tickets</button> </div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="event date">
+              <small style="line-height:20%">Tue</small>
+              <small style="line-height:20%">Mar. 14, 2018</small>
+              <small style="line-height:10%">8:30 pm</small>
+            </div>
+            <div class="col col-2" data-label="Performer Name"><%= p_name %></div>
+            <div class="col col-3" data-label="Amount"> <button class="ui primary basic button">Tickets</button> </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+      </div>
+      <div class="box b">B</div>
+      <div class="box c">C</div>
+    </div>
+
+
+
+  </body>
+</html>
+
